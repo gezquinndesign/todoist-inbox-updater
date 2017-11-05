@@ -1,0 +1,9 @@
+certifi==2017.7.27.1
+chardet==3.0.4
+gunicorn==19.7.1
+idna==2.6
+psycopg2==2.7.3.2
+requests==2.18.4
+todoist==0.0.1
+urllib3==1.22
+uuid==1.30
