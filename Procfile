@@ -1,1 +1,1 @@
-web: gunicorn inboxupdater.py --log-file -
+web: python server.py
