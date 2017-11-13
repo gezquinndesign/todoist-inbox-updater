@@ -6,13 +6,11 @@ dict = projects
 inboxId = [obj.get('id') for obj in projects if(obj['name'] == 'Inbox')]
 nowId = [obj.get('id') for obj in projects if(obj['name'] == 'NOW')]
 filter = "no date"
-##print nowId
-##print inboxId
+
 tasks = requests.get("https://beta.todoist.com/API/v8/tasks", params={"token": token, "project_id": inboxId, "filter": filter}).json()
 
 for task in tasks:
     taskId = task.get('id')
-##    print("Updating task id %s" % taskId)
     requests.post("https://beta.todoist.com/API/v8/tasks/%s" % taskId,
         params={"token": token},
         data=json.dumps({"due_string": "today"}),
@@ -23,12 +21,9 @@ for task in tasks:
     )
 
 tasks = requests.get("https://beta.todoist.com/API/v8/tasks", params={"token": token, "project_id": inboxId}).json()
-print tasks
 for task in tasks:
     taskId = task.get('id')
-##    print("Updating task id %s" % taskId)
     api = todoist.TodoistAPI(token)
     item = api.items.get_by_id(taskId)
     item.move(nowId[0])
     api.commit()
-##print tasks
