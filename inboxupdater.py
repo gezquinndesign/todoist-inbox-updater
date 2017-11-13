@@ -1,5 +1,5 @@
-import json, requests, uuid
-from todoist.api import TodoistAPI
+import json, requests, uuid, todoist
+##from todoist.api import TodoistAPI
 
 token = "dd7679bad6a4558c8e23f753d3f30adf31008dc2";
 projects = requests.get("https://beta.todoist.com/API/v8/projects", params={"token": token}).json()
@@ -25,6 +25,7 @@ tasks = requests.get("https://beta.todoist.com/API/v8/tasks", params={"token": t
 for task in tasks:
     taskId = task.get('id')
     api = todoist.TodoistAPI(token)
+    api.sync()
     item = api.items.get_by_id(taskId)
     item.move(nowId[0])
     api.commit()
