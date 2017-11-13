@@ -22,17 +22,13 @@ for task in tasks:
         }
     )
 
-##tasks = requests.get("https://beta.todoist.com/API/v8/tasks", params={"token": token, "project_id": inboxId}).json()
-##print tasks
-##for task in tasks:
-##    taskId = task.get('id')
+tasks = requests.get("https://beta.todoist.com/API/v8/tasks", params={"token": token, "project_id": inboxId}).json()
+print tasks
+for task in tasks:
+    taskId = task.get('id')
 ##    print("Updating task id %s" % taskId)
-##    requests.post("https://beta.todoist.com/API/v8/tasks/%s" % taskId,
-##        params={"token": token},
-##        data=json.dumps({"project_id": 122531643}),
-##        headers={
-##            "Content-Type": "application/json",
-##            "X-Request-Id": str(uuid.uuid4()),
-##        }
-##    )
+    api = todoist.TodoistAPI(token)
+    item = api.items.get_by_id(taskId)
+    item.move(nowId[0])
+    api.commit()
 ##print tasks
