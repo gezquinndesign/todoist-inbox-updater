@@ -1,4 +1,5 @@
-import json, requests, uuid, todoist
+import json, requests, uuid
+from todoist.api import TodoistAPI
 
 token = "dd7679bad6a4558c8e23f753d3f30adf31008dc2";
 projects = requests.get("https://beta.todoist.com/API/v8/projects", params={"token": token}).json()
