@@ -10,7 +10,7 @@ gunicorn = "*"
 "psycopg2" = "*"
 requests = "*"
 uuid = "*"
-todoist = "*"
+todoist = "8.1.1"
 
 [requires]
 
