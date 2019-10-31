@@ -26,6 +26,5 @@ for task in tasks:
     api = todoist.TodoistAPI(token)
     api.sync()
     item = api.items.get_by_id(taskId)
-    print(nowId[0])
     item.move(project_id=nowId[0])
     api.commit()
