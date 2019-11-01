@@ -83,7 +83,7 @@
             "hashes": [
                 "sha256:d7b5ac3efbb35c9613d0d0b56213494be787e9478c5870d876b35374dfcb7788"
             ],
-            "version": "==0.0.1"
+            "version": "==8.1.1"
         },
         "urllib3": {
             "hashes": [
