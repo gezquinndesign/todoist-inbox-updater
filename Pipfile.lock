@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "425b4f727da1e9661fe4c0f92d7a43b7b32e48c10491355cfcb2629eecb506ef"
+            "sha256": "ca6d189da94361ea252070c2b0d2b3f8b5a8bc01dbba873c2487ddad7f81dbb7"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -79,9 +79,10 @@
             ],
             "version": "==2.22.0"
         },
-        "todoist": {
+        "todoist-python": {
             "hashes": [
-                "sha256:d7b5ac3efbb35c9613d0d0b56213494be787e9478c5870d876b35374dfcb7788"
+                "sha256:f38c04ae3704c8318f5397e2e1c34586260e06b3f2e0f659eec91a56a08d1fc6",
+                "sha256:da22f97c353fb0af435dd06194b1c72d0f8ac1c6ea987af0d51b3fb091bb114e"
             ],
             "version": "==8.1.1"
         },
