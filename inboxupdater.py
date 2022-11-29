@@ -2,8 +2,8 @@ import json, requests, uuid, os
 
 from todoist.api import TodoistAPI
 
-token = os.environ.get('API_TOKEN')
-destination = os.environ.get('DESTINATION_PROJECT')
+token = os.environ['API_TOKEN']
+destination = os.environ['DESTINATION_PROJECT']
 projects = requests.get("https://api.todoist.com/rest/v1/projects", params={"token": token}).json()
 dict = projects
 inboxId = [obj.get('id') for obj in projects if(obj['name'] == 'Inbox')]
